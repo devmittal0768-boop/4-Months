@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Punam ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+      animation: bgChange 10s infinite alternate;
+      color: white;
+    }
+
+    /* Background animation */
+    @keyframes bgChange {
+      0% { background: #ff758c; }
+      25% { background: #ff7eb3; }
+      50% { background: #ff6a88; }
+      75% { background: #ff99ac; }
+      100% { background: #ff758c; }
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 45px;
+      text-shadow: 0 0 20px white;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 20px;
+      border: none;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border-radius: 20px;
+      border: none;
+      margin: 15px;
+      cursor: pointer;
+      background: white;
+      color: #ff4b7d;
+      font-size: 18px;
+    }
+
+    #message {
+      display: none;
+      width: 85%;
+      margin: auto;
+      margin-top: 40px;
+      line-height: 2;
+      font-size: 28px; /* Big text */
+      font-weight: bold;
+      white-space: pre-line;
+      text-shadow: 0 0 15px rgba(255,255,255,0.8);
+      margin-bottom: 120px;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="bargad.mp3" type="audio/mpeg">
+</audio>
+
+<h1>Enter Secret Password ❤️</h1>
+
+<input type="password" id="password" placeholder="Your special word"><p> [Hint- What do i call you!!]</p>
+<br>
+<button onclick="unlock()">Unlock 💕</button>
+
+<div id="message">
+Happy 4 Months, Punam ❤️✨
+
+Aaj humare 4 months ho gye ❤️ aur honestly, yeh 4 months mere life ke sabse important time rahe hain 💫  
+
+M janta hoon last month thoda tough tha… kalesh hua 😔, misunderstandings hui 💔, shayad maine bhi galtiyan ki 🙇‍♂️  
+Agar kabhi maine tumhe hurt kiya ho ya tumhe feel karaya ho ki tum important nahi ho — toh I’m really sorry ❤️🥺  
+
+Mera intention kabhi bhi tumhe hurt karna nahi tha 🤍  
+Kabhi kabhi situation aur ego beech m aa jaate h 😞 but meri feelings kabhi change nahi hui 💖  
+
+Sach yeh h ki jitna humne fight kiya 😣 utna hi mujhe realize hua ki m tumhe kitna seriously leta hoon aur aap meri kitni care krte ho❤️  
+
+Relationship perfect ni hota… par jo log ek dusre ko chhodte ni, woh perfect ban jaata h 🤝❤️  
+
+Main future m aur better banna chahta hoon 🌱 tumhare liye, ni humare liye 💑  
+Main chahta hoon ki yeh “4 months” ek din “4 years” bane… aur phir usse bhi zyada 🥰✨  
+
+At the end of every argument 😶, every silence 🤐, every misunderstanding 💔…  
+I still choose you ❤️‍🔥  
+
+Happy 4 months, Punam 💕  
+I love yoou Punamm 💖 and I’m not planning to stop anytime soon 😌❤️
+</div>
+
+<script>
+function unlock() {
+  const correctPassword = "Bubu"; // Change if needed
+  const input = document.getElementById("password").value;
+
+  if (input.toLowerCase() === correctPassword.toLowerCase()) {
+    document.querySelector("h1").style.display = "none";
+    document.querySelector("input").style.display = "none";
+    document.querySelector("button").style.display = "none";
+    document.getElementById("message").style.display = "block";
+    document.getElementById("bgMusic").play();
+    startHearts();
+  } else {
+    alert("Wrong password 😜 Try again ❤️");
+  }
+}
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    const colors = ["❤️","💖","💜","💙","💛","💚","🧡"];
+    heart.innerHTML = colors[Math.floor(Math.random() * colors.length)];
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (Math.random() * 25 + 20) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 7000);
+
+  }, 300);
+}
+</script>
+
+</body>
+</html>
